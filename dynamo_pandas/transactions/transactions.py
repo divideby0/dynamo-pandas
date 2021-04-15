@@ -291,7 +291,7 @@ def put_items(*, items, table):
             RequestItems={table: [{"PutRequest": {"Item": item}} for item in items]}
         )
         if response["UnprocessedItems"] != {}:
-            return response["UprocessedItems"][table]
+            return response["UnprocessedItems"][table]
         else:
             return []
 
